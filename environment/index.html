@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <style type="text/css">
+            .logo img{
+		     	width: 115px;
+			    height: 39px;
+			    float: left;
+            }
+            .content{ 
+                border:none;
+                background-color: rgb(255, 255, 255);
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                column-gap: 5px;
+                grid-row-gap: 10px;
+                position: relative;
+               
+            } 
+            .card{ 
+                border:3px solid #000;
+                border-radius: 10px;
+                padding: 1em;
+                box-shadow: 0px 8px 4px #b2bec3;
+                margin: 1em;
+            }
+            
+            .image img{
+                max-width: 100%;
+            }
+            
+            .text {
+               margin-bottom: 2em;
+            }
+            
+            .details {
+                list-style-type: none; 
+                padding: 0; 
+                margin: 0; 
+            }
+            
+            .add-button{
+                background-color: rgb(200, 191, 231);    
+                border: none;
+                padding: 0.5em;
+                border-radius: 5px;
+                position: relative;
+            }
+            
+            .add-button:hover{
+                box-shadow: 5px 5px 5px #b2bec3;
+                color: #30336b;
+            }
+            
+            .bottom{
+                /*position: absolute;
+                bottom: 0;*/
+                position: absolute;
+                bottom: 5px;
+                width: 200px;
+                left: 80%;
+            }
+            
+            .reservation{
+                float: right;
+                background-color: #62529c;    
+                border: none;
+                padding: 0.5em;
+                border-radius: 5px;
+            }
+          
+            
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body onload="display()" style="background-color: rgb(200, 191, 231);">
+        <div class="logo">
+            <img src="logo.PNG">
+            <input type="button" onclick="location.href='ShoppingCart.php';" value="Reservation" class="reservation" style="color:white;" />
+        <center>
+            <h3>Car Rental Center</h3>
+        </center>
+        
+        </div>
+        <div class="content" id="content">
+            
+        </div>
+        
+        <script "text/javascript">
+            function display(){
+                var xmlhttp = CreateXHR();
+              
+                xmlhttp.onreadystatechange = function(){
+                    if(xmlhttp.readyState == 4 && xmlhttp.status == 200){
+                        var carsText = xmlhttp.responseText;
+                        console.log(carsText);
+                        var cars = [];
+                        cars = JSON.parse(carsText);
+                        console.log(cars);
+                        buildList(cars);
+                    }
+                }  
+                xmlhttp.open("GET", "cars.json", true);
+                xmlhttp.send();
+            
+            }
+            function CreateXHR(){
+                if(window.XMLHttpRequest){
+                    return new XMLHttpRequest();
+                } else {
+                    return new ActiveXObject("Microsoft.XMLHTTP");
+                }
+            }
+            
+            function buildList(cars){
+                var list = document.getElementById("content");
+                for(var i = 0; i < cars.length; i++){
+                    var category = cars[i].category;
+                    var availability = cars[i].availability;
+                    var brand = cars[i].brand;
+                    var model = cars[i].model;
+                    var model_year = cars[i].model_year;
+                    var mileage = cars[i].mileage;
+                    var fuel = cars[i].fuel;
+                    var seats = cars[i].seats;
+                    var price = cars[i].price;
+                    var description = cars[i].description;
+                    var image = cars[i].image;
+                    var vehicle = model_year + '-' + brand + '-' + model;
+                    console.log(brand);
+                    var car = '<div class="card">';
+                    
+                    car += '<div class="image">';
+                    car += '<img src="' + image + '">';
+                    car += '</div>'
+                    
+                    car += '<div class="title">';
+                    car += '<p>' + brand +'-' + model + '-' + model_year + '</p>';
+                    car += '</div>';
+                    
+                    car += '<div class="text">';
+                    car += '<ul class="details">';
+                    car += '<li><b>mileage:</b> ' + mileage + '</li>';
+                    car += '<li><b>fuel type:</b> ' + fuel + '</li>';
+                    car += '<li><b>seats:</b> ' + seats + '</li>';
+                    car += '<li><b>price per day:</b> ' + price + '</li>';
+                    car += '<li><b>availability:</b> ' + availability + '</li>';
+                    car += '<li><b>description:</b> ' + description + '</li>';
+                    car += '</ul>';
+                    car += '</div>';
+                    
+                    car += '<div class="bottom">';
+                    car += '<button class="add-button" onclick="add('+ "'" + image + "'" + ', ' + "'" +  vehicle + "'" + ', ' + "'" +  price + "'" +  ', ' + "'" + availability + "'" + ')">Add</button>';
+                    car += '</div>';
+                    car += '</div>';
+                    
+                    list.innerHTML += car;
+                    
+                }
+            }
+            
+            function add(image, vehicle, price, availability){
+                console.log(vehicle);
+                if(availability != "True"){
+                    alert("Sorry, the car is not available now. Please try other cars.");
+                } else {
+                    var info = "thumbnail="  + image  + "&vehicle="  + vehicle  +"&price="  + price;
+                    console.log(info);
+                    var xhr = CreateXHR();
+                    xhr.open('POST','CartSession.php',true);
+                    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                    xhr.send(info);
+                    alert("Add to the shopping cart successfully!");
+                }
+               
+            }
+        </script>
+    </body>
+</html>

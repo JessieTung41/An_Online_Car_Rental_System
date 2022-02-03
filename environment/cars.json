@@ -1,0 +1,135 @@
+[
+    {
+	    "category": "sedan",
+		"availability": "True",
+		"brand": "Toyota",
+		"model": "Camry",
+		"model_year": "2013",
+		"mileage": "10000",
+		"fuel": "Petrol",
+		"seats": "5",
+		"price": "240",
+		"description": "The 2021 Toyota Camry sits near the top of our midsize car rankings. It boasts a generous list of standard safety tech, straightforward infotainment controls, a gentle ride, sharp steering, and a potent engine option.",
+		"image": "images/Camry.jpg"
+	
+    },
+	{
+	    "category": "SUV",
+		"availability": "False",
+		"brand": "Nissan",
+		"model": "X-trail",
+		"model_year": "2015",
+		"mileage": "36782",
+		"fuel": "Petrol",
+		"seats": "7",
+		"price": "360",
+		"description": "The world's most popular SUV, the mid-sized Nissan X-Trail is spacious and good to drive, with all but the least costly variant offering part-leather trim and satellite navigation.",
+		"image": "images/X-trail.jpg"
+    },
+	{
+	    "category": "sedan",
+		"availability": "False",
+		"brand": "Volkswagen",
+		"model": "Golf",
+		"model_year": "2017",
+		"mileage": "13556",
+		"fuel": "CNG",
+		"seats": "5",
+		"price": "180",
+		"description": "The Volkswagen Golf is one incredibly popular compact car with great ratings and great reviews.",
+		"image": "images/Golf.jpg"
+    },
+	{
+	    "category": "sedan",
+		"availability": "False",
+		"brand": "Honda",
+		"model": "Civic",
+		"model_year": "2018",
+		"mileage": "9586",
+		"fuel": "Petrol",
+		"seats": "5",
+		"price": "220",
+		"description": "Civic fans praise the compact car for its fuel efficiency, practicality, low maintenance, quality engineering, and reliability.",
+		"image": "images/Civic.jpg"
+    },
+    {
+	    "category": "SUV",
+		"availability": "True",
+		"brand": "Chevrolet",
+		"model": "Captiva",
+		"model_year": "2019",
+		"mileage": "12345",
+		"fuel": "Diesel",
+		"seats": "5",
+		"price": "180",
+		"description": "A smooth, quiet diesel engine, along with bags of room and refined styling, make this a credible contender in the SUV market.",
+		"image": "images/Captiva.jpg"
+    },
+	{
+	    "category": "SUV",
+		"availability": "True",
+		"brand": "Suzuki",
+		"model": "Jimny",
+		"model_year": "2019",
+		"mileage": "18000",
+		"fuel": "Petrol",
+		"seats": "6",
+		"price": "200",
+		"description": "The Suzuki Jimny is a line of four-wheel drive off-road mini SUVs, manufactured and marketed by Japanese automaker Suzuki since April 1970, and now in its fourth generation.",
+		"image": "images/Jimny.jpg"
+    },
+    {
+	    "category": "SUV",
+		"availability": "True",
+		"brand": "Mercedes-Benz",
+		"model": "GLC",
+		"model_year": "2021",
+		"mileage": "20000",
+		"fuel": "Petrol",
+		"seats": "4",
+		"price": "290",
+		"description": "The 2021 Mercedes-Benz GLC is a good luxury compact SUV. The GLC has a sumptuous and quiet interior with comfy seats, room for five occupants, and a sizable cargo area.",
+		"image": "images/GLC.jpg"
+    },
+	{
+	    "category": "sedan",
+		"availability": "True",
+		"brand": "Hyundai",
+		"model": "Sonata",
+		"model_year": "2020",
+		"mileage": "16000",
+		"fuel": "Petrol",
+		"seats": "4",
+		"price": "230",
+		"description": "The Hyundai Sonata Reliability Rating is 4.0 out of 5.0, which ranks it 5th out of 24 for midsize cars.",
+		"image": "images/Sonata.jpg"
+    },
+	{
+	    "category": "SUV",
+		"availability": "True",
+		"brand": "Jeep",
+		"model": "Cherokee",
+		"model_year": "2020",
+		"mileage": "20000",
+		"fuel": "Petrol",
+		"seats": "6",
+		"price": "250",
+		"description": "The Jeep Cherokee is a line of SUVs manufactured and marketed by Jeep over five generations.",
+		"image": "images/Cherokee.jpg"
+    },
+	{
+	    "category": "sedan",
+		"availability": "True",
+		"brand": "BMW",
+		"model": "320i",
+		"model_year": "2013",
+		"mileage": "22000",
+		"fuel": "Petrol",
+		"seats": "5",
+		"price": "240",
+		"description": "BMW's 320i has long been a popular entry-level prestige machine and, with its good looks, build quality, and engineering.",
+		"image": "images/320i.jpg"
+    }
+
+
+]
